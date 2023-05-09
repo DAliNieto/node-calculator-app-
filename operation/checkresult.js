@@ -7,6 +7,7 @@ const check = (num1)=>{
     }
 }
 
-module.exports =  check;
+//module.exports =  check;
 
+export {check};
 

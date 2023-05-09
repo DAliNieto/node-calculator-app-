@@ -1,4 +1,5 @@
-const check = require ("./checkresult")
+//const check = require ("./checkresult")
+import {check} from './checkresult.js';
 
 var num=0;
 
@@ -14,8 +15,8 @@ const pairimpair = (num) =>{
 }
 
 //console.log(`entro2 ${check(num)}`);
-
+//console.log(pairimpair(num1)); 
+//module.exports =pairimpair;
+export {pairimpair};
 
  
-//console.log(pairimpair(num1)); 
-module.exports =pairimpair;

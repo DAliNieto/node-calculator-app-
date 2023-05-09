@@ -1,18 +1,26 @@
-const check = require ("./checkresult")
+//const check = require ("./checkresult")
+//import * as check from './checkresult';
 
-var num1=0;
-var num2=0;
+import {check} from './checkresult.js';
+
+let num1='a';
+let ant=2;
+let total=0;
 
 
-function suma (num1,num2) {
+
+function suma (num1,ant) {
    
-    if ((check(num1) && check(num2))===1){
-        return Number(num1)+Number(num2); 
+    if (check(num1) === 1){
+       // console.log(`Checknum1 ${check(num1) }`);
+       // console.log(`Checknum2 ${check(num2) }`);
+        total = Number (ant) + Number (num1);
+        return Number(total); 
     }
-       
+      
 } 
    
-//console.log(suma(num1,num2));
-module.exports =  suma;
+console.log(suma(num1,ant));
+//module.exports =  suma;
 
- 
+ export {suma } ;
