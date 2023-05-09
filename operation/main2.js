@@ -78,7 +78,7 @@ do{
                     let num=0;
                     let ant=0;
                     let totalsuma=suma (0,0);
-                    nomore=true;
+                    let nomore=true;
                     while (i<=ts && nomore === true){
                         num = await rl.question(`Digite num ${ i }: `) ;
                         if (num.toString() != ''){  
@@ -116,7 +116,7 @@ do{
                     let num=0;
                     let ant=0;
                     let totalresta=resta (0,0);
-                    nomore=true;
+                    let nomore=true;
                     while (i<=ts && nomore === true){
                         num = await rl.question(`Digite num ${ i }: `) ;
                        
@@ -162,7 +162,7 @@ do{
               let num=0;
               let ant=1;
               let totalmult=mult(1,1);
-              nomore=true;
+              let nomore=true;
                           
                 while (i<=ts && nomore === true){
                   num = await rl.question(`Digite num ${ i }: `) ;
@@ -200,19 +200,25 @@ do{
 
               let i=1;
               let num=0;
-              let num2=0;
+              
               let ant=1;
-              let totaldivi=0;
+              let totaldivi=divi(1,1);
               let nomore=true;
                           
                 while (i<=ts && nomore === true){
                   num = await rl.question(`Digite num ${ i }: `) ;
 
-            console.log(`Num antes if: ${num}`);                    
-                            if (num.toString() != '' && i>1){
+                    //console.log(`Num antes if: ${num}`);                        
+                            if (num.toString() != '' ){
 
-                                    totaldivi = divi (Number(num),Number(num2));
-                                    ant = totaldivi;
+                                    if (i===1){
+                                        totaldivi = divi(Number(num),Number(ant));
+                                        
+                                        ant = totaldivi;
+                                    }else {
+                                        totaldivi = divi (Number(ant),Number(num));
+                                        ant = totaldivi; 
+                                    }
                                     
                                     if (totaldivi===undefined){
                                         console.log(`Uno de los datos ingresados no es numerico`);
@@ -220,8 +226,6 @@ do{
                                     }else{
                                         i++;
                                     }           
-                            }else if (num.toString()===''){
-                                console.log(`Por favor digitar número `);
                             }
                 }
               
